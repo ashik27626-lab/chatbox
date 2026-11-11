@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== START SCREEN ========== -->
+  <section class="start-screen" id="startScreen">
+    <div class="start-inner">
+      <div class="logo">✦</div>
+      <h1>Private Chat</h1>
+      <p class="sub">A quiet space for two.</p>
+      <button class="primary start-btn" id="startBtn">Start</button>
+    </div>
+  </section>
+
+  <!-- ========== KEY POPUP ========== -->
+  <div class="modal-overlay" id="keyModal">
+    <div class="modal">
+      <h2>Enter your key</h2>
+      <p class="modal-sub">Only authorized keys can enter.</p>
+      <form id="setupForm">
+        <div>
+          <label for="key">Key</label>
+          <input type="password" id="key" maxlength="8" autocomplete="off"
+                 placeholder="Enter key" inputmode="numeric" required />
+        </div>
+        <p class="error" id="keyError"></p>
+        <div class="modal-actions">
+          <button type="button" class="ghost" id="cancelBtn">Cancel</button>
+          <button class="primary" type="submit">Enter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== CHAT AREA ========== -->
+  <section class="chat-area hidden" id="chatArea">
+    <header class="chat-header">
+      <div class="avatar">✦<span class="online-dot"></span></div>
+      <div class="info">
+        <h3 id="chatWith">—</h3>
+        <p id="statusText">Online</p>
+      </div>
+      <button class="logout-btn" id="logoutBtn" title="Logout">⎋</button>
+    </header>
+
+    <div class="messages" id="messages"></div>
+
+    <form class="input-bar" id="chatForm">
+      <input id="msgInput" type="text" placeholder="Type a message..."
+             autocomplete="off" />
+      <button class="send-btn" type="submit">➤</button>
+    </form>
+  </section>
+
+  <!-- Firebase SDK (v9 modular via CDN) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
